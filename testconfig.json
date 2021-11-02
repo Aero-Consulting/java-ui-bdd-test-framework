@@ -1,0 +1,36 @@
+{
+  "hubs": {
+    "default": {
+      "url": "http://127.0.0.1:4723/wd/hub",
+      "devices": {
+        "default": {
+          "driver": "Android",
+          "capabilities": {
+            "deviceName": "Nexus6",
+            "platformName": "Android",
+            "platformVersion": "8.1"
+          }
+        }
+      }
+    },
+    "browserstack": {
+      "url": "https://{Username}:{AccessKey}@hub-cloud.browserstack.com/wd/hub",
+      "devices": {
+        "iPhone11Pro": {
+          "driver": "IOS",
+          "capabilities": {
+            "os_version": "14.7",
+            "device": "iPhone 11 Pro Max"
+          }
+        },
+        "s10e": {
+          "driver": "Android",
+          "capabilities": {
+            "os_version": "9.0",
+            "device": "Samsung Galaxy S10e"
+          }
+        }
+      }
+    }
+  }
+}

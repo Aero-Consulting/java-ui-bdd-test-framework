@@ -1,0 +1,60 @@
+name: UI tests
+
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
+  contents: write
+  pages: write
+
+on:
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    environment:
+      name: browserstack
+      url: https://aero-consulting.github.io/java-ui-test-framework/${{ github.run_number }}
+    steps:
+      - name: My first action
+        env:
+          USERBS: ${{ secrets.BSUSER }}
+          FIRST_NAME: Mona
+          LAST_NAME: Octocat
+        run: echo "$LAST_NAME $FIRST_NAME . Today is $USERBS !"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build tests container
+        run: docker build -t ui-bdd-tests .
+
+      - name: Run tests
+        run: docker run -e bsUser='${{ secrets.BSUSER }}' -e bsKey='${{ secrets.BSKEY }}' --rm -v /home/runner/work/java-ui-bdd-test-framework/java-ui-bdd-test-framework/build/allure-results:/home/gradle/build/allure-results ui-bdd-tests
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Allure Report action
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: build/allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history

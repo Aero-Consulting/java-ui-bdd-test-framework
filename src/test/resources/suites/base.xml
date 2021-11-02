@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo" configfailurepolicy="continue" data-provider-thread-count="2">
+    <test name="Android tests">
+        <parameter name="hub" value="browserstack"/>
+        <parameter name="device" value="s10e"></parameter>
+        <parameter name="app" value="bs://ba737dadf421e38e784b3a3e3f5319e8ccaea515"></parameter>
+        <packages>
+            <package name="tests.cucumber"/>
+        </packages>
+    </test>
+    <test name="IOS tests">
+        <parameter name="hub" value="browserstack"/>
+        <parameter name="device" value="iPhone11Pro"></parameter>
+        <parameter name="app" value="bs://fb2196d7b7980ac77c4afd2172c1d510805df349"></parameter>
+        <packages>
+            <package name="tests.cucumber"/>
+        </packages>
+    </test>
+</suite>
