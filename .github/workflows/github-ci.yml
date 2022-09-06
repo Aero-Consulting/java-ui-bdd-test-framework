@@ -19,13 +19,6 @@ jobs:
       name: browserstack
       url: https://aero-consulting.github.io/java-ui-bdd-test-framework/${{ github.run_number }}
     steps:
-      - name: My first action
-        env:
-          USERBS: ${{ secrets.BSUSER }}
-          FIRST_NAME: Mona
-          LAST_NAME: Octocat
-        run: echo "$LAST_NAME $FIRST_NAME . Today is $USERBS !"
-
       - name: Checkout
         uses: actions/checkout@v3
 
