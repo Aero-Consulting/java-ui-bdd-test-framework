@@ -19,6 +19,7 @@ jobs:
       name: browserstack
       url: https://aero-consulting.github.io/java-ui-bdd-test-framework/${{ github.run_number }}
     steps:
+
       - name: Checkout
         uses: actions/checkout@v3
 
