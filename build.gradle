@@ -25,7 +25,7 @@ repositories {
 // dependency versions
 def selenideVersion = "5.25.0"
 def testNGVersion = "7.4.0"
-def allureVersion = "2.16.0"
+def allureVersion = "2.19.0"
 def cucumberVersion = "6.11.0"
 def appiumVersion = "7.6.0"
 def logVersion = "2.14.1"
