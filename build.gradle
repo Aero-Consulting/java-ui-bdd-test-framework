@@ -28,7 +28,7 @@ def testNGVersion = "7.4.0"
 def allureVersion = "2.19.0"
 def cucumberVersion = "6.11.0"
 def appiumVersion = "7.6.0"
-def logVersion = "2.14.1"
+def logVersion = "2.18.0"
 
 dependencies {
     testImplementation "com.codeborne:selenide:$selenideVersion"
