@@ -36,7 +36,7 @@ dependencies {
     testImplementation "io.qameta.allure:allure-selenide:$allureVersion"
     testImplementation "io.qameta.allure:allure-cucumber6-jvm:$allureVersion"
     testImplementation "io.qameta.allure:allure-testng:$allureVersion"
-    testImplementation "io.qameta.allure.gradle.allure:allure-plugin:2.9.4"
+    testImplementation "io.qameta.allure.gradle.allure:allure-plugin:2.10.0"
     testImplementation "io.cucumber:cucumber-java:$cucumberVersion"
     testImplementation "io.cucumber:cucumber-testng:$cucumberVersion"
     testImplementation "io.appium:java-client:$appiumVersion"
