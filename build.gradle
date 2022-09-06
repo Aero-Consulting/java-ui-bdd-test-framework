@@ -23,7 +23,7 @@ repositories {
 }
 
 // dependency versions
-def selenideVersion = "5.25.0"
+def selenideVersion = "6.7.4"
 def testNGVersion = "7.4.0"
 def allureVersion = "2.19.0"
 def cucumberVersion = "6.11.0"
