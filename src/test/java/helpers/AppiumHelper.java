@@ -3,6 +3,7 @@ package helpers;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
@@ -10,7 +11,6 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
@@ -22,18 +22,14 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class AppiumHelper {
 
     public static void tapEnter() {
-        if (isIOS()) {
-            getAndroidDriver().pressKey(new KeyEvent().withKey(AndroidKey.ENTER));
-        } else {
-            getIOSDriver().getKeyboard().pressKey(Keys.ENTER);
-        }
+        getAndroidDriver().pressKey(new KeyEvent().withKey(AndroidKey.ENTER));
     }
 
     public static AndroidDriver getAndroidDriver() {
         return (AndroidDriver) WebDriverRunner.getWebDriver();
     }
 
-    public static AppiumDriver getIOSDriver() {
+    public static IOSDriver getIOSDriver() {
         return (IOSDriver) WebDriverRunner.getWebDriver();
     }
 
@@ -42,7 +38,7 @@ public class AppiumHelper {
     }
 
     public static void scrollToElement(PointOption start, PointOption end, int pressTime) {
-        new TouchAction(getDriver())
+        new TouchAction((PerformsTouchActions) getDriver())
                 .press(start)
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(pressTime)))
                 .moveTo(end)
@@ -63,7 +59,7 @@ public class AppiumHelper {
     }
 
     public static void scrollDown() {
-        new TouchAction(getDriver())
+        new TouchAction((PerformsTouchActions) getDriver())
                 .press(PointOption.point(50, 450))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
                 .moveTo(PointOption.point(0, 50))
@@ -76,7 +72,7 @@ public class AppiumHelper {
         while (element.is(hidden)) {
             tries++;
             if (tries == 10) break;
-            new TouchAction(getDriver())
+            new TouchAction((PerformsTouchActions) getDriver())
                     .press(PointOption.point(50, 300))
                     .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
                     .moveTo(PointOption.point(50, 450))
