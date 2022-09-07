@@ -26,7 +26,7 @@ repositories {
 def selenideVersion = "6.7.4"
 def testNGVersion = "7.4.0"
 def allureVersion = "2.19.0"
-def cucumberVersion = "6.11.0"
+def cucumberVersion = "7.6.0"
 def appiumVersion = "8.2.0"
 def logVersion = "2.18.0"
 
@@ -34,7 +34,7 @@ dependencies {
     testImplementation "com.codeborne:selenide:$selenideVersion"
     testImplementation "io.qameta.allure:allure-java-commons:$allureVersion"
     testImplementation "io.qameta.allure:allure-selenide:$allureVersion"
-    testImplementation "io.qameta.allure:allure-cucumber6-jvm:$allureVersion"
+    testImplementation "io.qameta.allure:allure-cucumber7-jvm:$allureVersion"
     testImplementation "io.qameta.allure:allure-testng:$allureVersion"
     testImplementation "io.qameta.allure.gradle.allure:allure-plugin:2.10.0"
     testImplementation "io.cucumber:cucumber-java:$cucumberVersion"
