@@ -34,7 +34,7 @@ dependencies {
     testImplementation "com.codeborne:selenide:$selenideVersion"
     testImplementation "io.qameta.allure:allure-java-commons:$allureVersion"
     testImplementation "io.qameta.allure:allure-selenide:$allureVersion"
-    testImplementation "io.qameta.allure:allure-cucumber6-jvm:$allureVersion"
+    testImplementation "io.qameta.allure:allure-cucumber7-jvm:$allureVersion"
     testImplementation "io.qameta.allure:allure-testng:$allureVersion"
     testImplementation "io.qameta.allure.gradle.allure:allure-plugin:2.10.0"
     testImplementation "io.cucumber:cucumber-java:$cucumberVersion"
