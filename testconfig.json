@@ -19,15 +19,17 @@
         "iPhone11Pro": {
           "driver": "IOS",
           "capabilities": {
-            "os_version": "14.7",
-            "device": "iPhone 11 Pro Max"
+            "platformName": "ios",
+            "platformVersion": "14.7",
+            "deviceName": "iPhone 11 Pro Max"
           }
         },
         "s10e": {
           "driver": "Android",
           "capabilities": {
-            "os_version": "9.0",
-            "device": "Samsung Galaxy S10e"
+            "platformName": "android",
+            "platformVersion": "9.0",
+            "deviceName": "Samsung Galaxy S10e"
           }
         }
       }
